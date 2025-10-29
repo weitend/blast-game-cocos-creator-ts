@@ -117,12 +117,6 @@ export default class Tile extends cc.Component {
 
   private updateSprite(): void {
     if (!this.sprite) return;
-    console.log(
-      "this.isSpecial() && this.specialSprites[this.specialType]",
-      this.isSpecial() && this.specialSprites[this.specialType]
-    );
-    console.log("this.specialType", this.specialType);
-    console.log("this.isSpecial()", this.isSpecial());
 
     if (this.isSpecial() && this.specialSprites[this.specialType]) {
       this.sprite.spriteFrame = this.specialSprites[this.specialType];
