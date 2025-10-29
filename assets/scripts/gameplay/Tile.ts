@@ -57,7 +57,7 @@ export default class Tile extends cc.Component {
   }
 
   private destroyListeners(): void {
-    this.node.on(cc.Node.EventType.TOUCH_END, this.onClick, this);
+    this.node.off(cc.Node.EventType.TOUCH_END, this.onClick, this);
   }
 
   public getGridPosition(): Coordinates {

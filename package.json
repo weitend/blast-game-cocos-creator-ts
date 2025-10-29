@@ -1,0 +1,24 @@
+{
+  "name": "blast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build/web-mobile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weitend/blast-game-cocos-creator-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weitend/blast-game-cocos-creator-ts/issues"
+  },
+  "homepage": "https://github.com/weitend/blast-game-cocos-creator-ts#readme",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

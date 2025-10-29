@@ -72,13 +72,17 @@ export default class TileGravityManager {
   private async createFallingTile(
     x: number,
     yStart: number,
-    yEnd
+    yEnd: number
   ): Promise<void> {
-    const node = this.factory.createTile(x, yStart);
-    const endPos = this.positionService.getTileWorldPosition(x, yEnd);
+    const node = this.factory.createTile(x, yEnd);
 
+    const startPos = this.positionService.getTileWorldPosition(x, yStart);
+    node.setPosition(startPos);
+
+    const endPos = this.positionService.getTileWorldPosition(x, yEnd);
     await TileAnimator.animateFall(node, endPos);
 
+    node.setPosition(endPos);
     this.grid.setTileAt(x, yEnd, node);
   }
 }

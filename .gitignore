@@ -5,8 +5,6 @@
 library/
 local/
 temp/
-build/
-native/
 settings/
 profile/
 
@@ -47,11 +45,3 @@ Thumbs.db
 *.bak
 *.tmp
 ~$*
-
-#/////////////////////////////////////////////////////////////////////////////
-# Cocos build cache (иногда создается при сборке)
-#/////////////////////////////////////////////////////////////////////////////
-
-temp/remote/
-build/web-desktop/
-build/web-mobile/

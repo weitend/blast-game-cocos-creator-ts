@@ -25,6 +25,8 @@ export default class BoosterManager extends cc.Component {
   private selectedTile: Coordinates | null = null;
   private isWaitingForSecondTile = false;
 
+  private isBusy = false;
+
   public init(grid: GridRepository, tileActions: TileActionExecutor): void {
     this.grid = grid;
     this.tileActions = tileActions;
@@ -53,6 +55,8 @@ export default class BoosterManager extends cc.Component {
     type: BoosterType;
     node: cc.Node;
   }): void {
+    if (this.isBusy) return;
+
     if (this.activeBoosterType === type) {
       this.deactivateBooster();
       return;
@@ -129,6 +133,8 @@ export default class BoosterManager extends cc.Component {
     if (!this.grid || !this.tileActions) return;
 
     if (this.isWaitingForSecondTile) {
+      this.isBusy = true;
+
       const firstNode = this.grid.getTileAt(
         this.selectedTile!.x,
         this.selectedTile!.y
@@ -193,5 +199,6 @@ export default class BoosterManager extends cc.Component {
     this.activeBoosterType = null;
     this.isWaitingForSecondTile = false;
     this.selectedTile = null;
+    this.isBusy = false;
   }
 }
